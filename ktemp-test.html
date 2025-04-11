@@ -1,0 +1,80 @@
+<html lang="zxx">
+<head>
+
+  <!-- ** Basic Page Needs ** -->
+  <meta charset="utf-8">
+  <title>icSoftComp2025</title>
+
+  
+  
+
+  
+
+
+<!--
+by kkp for timer
+-->
+<script>
+
+/* kkp slide show start */ 
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+/* kkp slide show end */
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+
+</script>
+
+
+</head>
+
+
+<body onLoad="carousel();">
+
+<img class="mySlides" src="images/slider/kk-2016.JPG" style="width:50%">
+									<img class="mySlides" src="images/slider/city15.jpg" style="width:50%">
+									<img class="mySlides" src="images/slider/kk-2017.JPG" style="width:50%">
+
+<img class="mySlides" src="images/slider/kk-2016.JPG">
+<img class="mySlides" src="images/slider/city15.jpg">
+<img class="mySlides" src="images/slider/kk-2017.JPG">
+<img class="mySlides" src="img_forest.jpg">
+
+<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
+</body>
+
+</html>
